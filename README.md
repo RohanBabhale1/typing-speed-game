@@ -53,7 +53,7 @@ Built as a submission for the take-home assignment described in the
 
 ## 🎥 Demo
 
-<video src="./assets/Demo.mp4" controls></video>
+<video src="https://github.com/user-attachments/assets/ff711f1d-d7c6-41e2-a35d-0d9749ef1462" controls></video>
 
 The demo showcases the complete game flow, including typing, wrong-key penalties,
 score calculation, authentication, game history, and the leaderboard.
