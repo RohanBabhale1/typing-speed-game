@@ -1,7 +1,8 @@
 import { GraphQLClient } from "graphql-request";
 
 const endpoint =
-  import.meta.env.VITE_GRAPHQL_URL ?? "http://localhost:4000/graphql";
+  import.meta.env.VITE_GRAPHQL_URL ??
+  `http://${window.location.hostname}:4000/graphql`;
 
 export const gqlClient = new GraphQLClient(endpoint);
 

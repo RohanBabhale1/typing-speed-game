@@ -1,6 +1,4 @@
-import {
-  useState,
-} from "react";
+import { useState } from "react";
 
 import {
   Link,
@@ -8,6 +6,7 @@ import {
 } from "react-router-dom";
 
 import { useAuth } from "../context/AuthContext";
+import { getErrorMessage } from "../utils/errors";
 
 export function Login() {
   const { login } = useAuth();
@@ -39,9 +38,7 @@ export function Login() {
       navigate("/");
     } catch (error) {
       setError(
-        error instanceof Error
-          ? error.message
-          : "Login failed"
+        getErrorMessage(error, "Login failed")
       );
     } finally {
       setLoading(false);
@@ -92,7 +89,9 @@ export function Login() {
         type="submit"
         disabled={loading}
       >
-        {loading ? "Logging in..." : "Log in"}
+        {loading
+          ? "Logging in..."
+          : "Log in"}
       </button>
 
       <p>

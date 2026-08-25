@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 
 import { useAuth } from "../context/AuthContext";
+import { getErrorMessage } from "../utils/errors";
 
 export function Register() {
   const { register } = useAuth();
@@ -45,9 +46,10 @@ export function Register() {
       navigate("/");
     } catch (error) {
       setError(
-        error instanceof Error
-          ? error.message
-          : "Registration failed"
+        getErrorMessage(
+          error,
+          "Registration failed"
+        )
       );
     } finally {
       setLoading(false);

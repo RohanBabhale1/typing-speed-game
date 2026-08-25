@@ -8,12 +8,18 @@ const schema = createSchema({
   resolvers,
 });
 
+const allowedOrigins = (process.env.FRONTEND_URL ?? "http://localhost:5173")
+  .split(",")
+  .map((origin) => origin.trim());
+
 const yoga = createYoga({
   schema,
   context: createContext,
   graphqlEndpoint: "/graphql",
   cors: {
-    origin: process.env.FRONTEND_URL ?? "http://localhost:5173",
+    origin: (process.env.FRONTEND_URL ?? "http://localhost:5173")
+      .split(",")
+      .map((url) => url.trim()),
     credentials: true,
   },
 });
