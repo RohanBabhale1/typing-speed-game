@@ -4,8 +4,6 @@ A full-stack typing speed game. Type 20 randomly generated lowercase letters as 
 you can — every wrong key adds a 0.5s penalty. Beat your personal best to see
 "New Best!"; otherwise you'll see "Try Again."
 
-Built as a submission for the take-home assignment described in the
-[full spec](https://docs.google.com/document/d/1c6UMI7ONMrqwPeDIfvTgsRuT1Db3eraPxfmw63s2plI/edit).
 
 ---
 
@@ -252,13 +250,3 @@ on `error.extensions.code` instead of parsing message strings.
 - **`graphql-request` over Apollo Client**: the frontend only needs a handful of
   query/mutation calls with no caching/normalization requirements, so a minimal
   client avoids Apollo's setup and bundle overhead.
-
-## Known limitations / things I'd do next with more time
-
-- No password reset flow.
-- No pagination on `myGameHistory` — fine at the current scale, would need a cursor
-  for a large history.
-- No rate limiting on `login`/`register` (would add before any real deployment).
-- Leaderboard `groupBy` re-fetches all matching users per request rather than
-  caching; acceptable at this scale, would add a materialized view or cache layer
-  under real load.
