@@ -51,6 +51,14 @@ Built as a submission for the take-home assignment described in the
   </tr>
 </table>
 
+## 🎥 Demo
+
+<video src="./assets/Demo.mp4" controls></video>
+
+The demo showcases the complete game flow, including typing, wrong-key penalties,
+score calculation, authentication, game history, and the leaderboard.
+
+
 ## Stack
 
 | Layer | Technology |
