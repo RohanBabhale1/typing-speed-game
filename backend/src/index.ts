@@ -8,10 +8,6 @@ const schema = createSchema({
   resolvers,
 });
 
-const allowedOrigins = (process.env.FRONTEND_URL ?? "http://localhost:5173")
-  .split(",")
-  .map((origin) => origin.trim());
-
 const yoga = createYoga({
   schema,
   context: createContext,
